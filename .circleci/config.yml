@@ -169,7 +169,6 @@ jobs:
       - checkout
       - add_ssh_keys:
           fingerprints: 
-            - 5d:12:10:23:b7:ec:70:76:d3:c7:fb:bc:2d:52:e5:f7
             - 46:01:4e:c2:a1:b4:af:39:9c:29:e0:be:fb:45:17:b2
             - 09:33:6d:86:bf:00:e8:2e:dc:c0:a6:bd:b7:69:f4:ab
             - dd:00:e1:26:5b:07:6b:63:d1:bd:a6:5a:89:77:78:72
@@ -300,7 +299,7 @@ jobs:
       - checkout
       - add_ssh_keys:
           fingerprints: 
-            - 5d:12:10:23:b7:ec:70:76:d3:c7:fb:bc:2d:52:e5:f7
+           
             - 46:01:4e:c2:a1:b4:af:39:9c:29:e0:be:fb:45:17:b2
             - 09:33:6d:86:bf:00:e8:2e:dc:c0:a6:bd:b7:69:f4:ab
             - dd:00:e1:26:5b:07:6b:63:d1:bd:a6:5a:89:77:78:72
