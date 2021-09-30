@@ -465,7 +465,7 @@ workflows:
           requires: [deploy-backend, deploy-frontend]
           filters:
             branches:
-              only: [master]
+              only: [main]
       - cloudfront-update:
           requires: [smoke-test]
           filters:
