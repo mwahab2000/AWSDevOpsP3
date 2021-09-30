@@ -174,7 +174,7 @@ jobs:
     steps:
       - checkout
       - add_ssh_keys:
-          fingerprints: ["6e:18:da:58:b3:e3:5e:bc:08:4f:2b:dc:56:54:b5:98"]
+          fingerprints: ["5d:12:10:23:b7:ec:70:76:d3:c7:fb:bc:2d:52:e5:f7","46:01:4e:c2:a1:b4:af:39:9c:29:e0:be:fb:45:17:b2","09:33:6d:86:bf:00:e8:2e:dc:c0:a6:bd:b7:69:f4:ab","dd:00:e1:26:5b:07:6b:63:d1:bd:a6:5a:89:77:78:72"]
       - attach_workspace:
           at: ~/
       - run: 
@@ -299,7 +299,7 @@ jobs:
     steps:
       - checkout
       - add_ssh_keys:
-          fingerprints: ["6e:18:da:58:b3:e3:5e:bc:08:4f:2b:dc:56:54:b5:98"]
+          fingerprints: ["5d:12:10:23:b7:ec:70:76:d3:c7:fb:bc:2d:52:e5:f7","46:01:4e:c2:a1:b4:af:39:9c:29:e0:be:fb:45:17:b2","09:33:6d:86:bf:00:e8:2e:dc:c0:a6:bd:b7:69:f4:ab","dd:00:e1:26:5b:07:6b:63:d1:bd:a6:5a:89:77:78:72"]
       - attach_workspace:
           at: ~/
       - run:
@@ -445,27 +445,27 @@ workflows:
           requires: [test-frontend, test-backend, scan-frontend, scan-backend]
           filters:
             branches:
-              only: [master]
+              only: [main]
       - configure-infrastructure:
           requires: [deploy-infrastructure]
           filters:
             branches:
-              only: [master]
+              only: [main]
       - run-migrations:
           requires: [configure-infrastructure]
           filters:
             branches:
-              only: [master]
+              only: [main]
       - deploy-frontend:
           requires: [run-migrations]
           filters:
             branches:
-              only: [master]
+              only: [main]
       - deploy-backend:
           requires: [deploy-frontend]
           filters:
             branches:
-              only: [master]
+              only: [main]
       - smoke-test:
           requires: [deploy-backend, deploy-frontend]
           filters:
@@ -475,9 +475,9 @@ workflows:
           requires: [smoke-test]
           filters:
             branches:
-              only: [master]
+              only: [main]
       - cleanup:
           requires: [cloudfront-update]
           filters:
             branches:
-              only: [master]
+              only: [main]
